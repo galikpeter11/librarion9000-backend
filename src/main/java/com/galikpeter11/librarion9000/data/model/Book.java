@@ -1,12 +1,15 @@
 package com.galikpeter11.librarion9000.data.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Objects;
 
 @Entity
 public class Book {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private String title;
     private Integer releaseYear;
@@ -16,8 +19,7 @@ public class Book {
     public Book() {
     }
 
-    public Book(Long id, String title, Integer releaseYear, Integer numberOfPages, String content) {
-        this.id = id;
+    public Book(String title, Integer releaseYear, Integer numberOfPages, String content) {
         this.title = title;
         this.releaseYear = releaseYear;
         this.numberOfPages = numberOfPages;
