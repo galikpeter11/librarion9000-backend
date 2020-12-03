@@ -5,8 +5,9 @@ import com.galikpeter11.librarion9000.service.BookService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("books")
+@RequestMapping(BookController.PATH)
 public class BookController {
+    public static final String PATH = "books";
     private final BookService bookService;
 
     public BookController(BookService bookService) {
